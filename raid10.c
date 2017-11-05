@@ -269,7 +269,7 @@ int main(int argc, char** argv)
 	dev_fd = _dev_fd;
 	
 	disks_in_raid1 = atoi(argv[1]);
-	num_of_raid1 = num_dev / disks_in_raid1;  //we assume num_dev is a multiple of disks_in_raid1
+	num_of_raid1 = num_dev / disks_in_raid1;  //assume num_dev is a multiple of disks_in_raid1
 	
 	// open all devices       
 	for (i = 0; i < num_dev; ++i) {
@@ -313,7 +313,7 @@ int main(int argc, char** argv)
 		}		
 	}
 	
-	for(i=0; i < num_dev; i++) {  //we were told there's no need to check return value of close syscall
+	for(i=0; i < num_dev; i++) {
 	  if (dev_fd[i] >= 0)
 	    close(dev_fd[i]);	 	
 	}
